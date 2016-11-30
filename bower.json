@@ -1,0 +1,25 @@
+{
+  "name": "Ejercicio Sass",
+  "description": "Instalación basica de Sass,Bower y algunos componentes",
+  "main": "index.html",
+  "keywords": [
+    "ejercicio"
+  ],
+  "authors": [
+    "Carlos Vergara"
+  ],
+  "license": "yes",
+  "homepage": "blueminded.co",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

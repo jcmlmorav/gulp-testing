@@ -1,0 +1,32 @@
+{
+  "name": "ejercicio-sass",
+  "version": "1.0.0",
+  "description": "Instalación basica de los paquetes de gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueminded/gulp-testing.git"
+  },
+  "keywords": [
+    "ejercicio"
+  ],
+  "author": "Carlos Vergara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blueminded/gulp-testing/issues"
+  },
+  "homepage": "https://github.com/blueminded/gulp-testing#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "0.0.14",
+    "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "minify": "^2.0.13"
+  }
+}
