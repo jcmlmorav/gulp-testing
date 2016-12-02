@@ -1,0 +1,20 @@
+{
+  "name": "bower.json",
+  "homepage": "https://github.com/jcmlmorav/gulp-testing",
+  "authors": [
+    "aazapata"
+  ],
+  "description": "Capacitación maquetacion con gulp-bower-sass",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
