@@ -1,49 +1,38 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    watch = require('gulp-watch'),
-    sourcemaps = require('gulp-sourcemaps'),
-    cssnano = require('gulp-cssnano'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var cleanCSS = require('gulp-clean-css');
+var concat = require('gulp-concat');
+var jsmin = require('gulp-jsmin');
+var rename = require('gulp-rename');
 
-var config = {
-    scssDir: './assets/scss',
-    cssDir: './assets/css',
-    jsDir: './assets/js',
-    jsDirLibs: './assets/libs'
-};
-
-gulp.task('style', function() {
-    return gulp.src(config.scssDir  + '/*scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .on('error', sass.logError)
-    .pipe(cssnano())
-    .pipe(sourcemaps.write('maps'))
-    .pipe(gulp.dest(config.cssDir))
+gulp.task('sass', function () {
+  return gulp.src('./scss/app.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(rename('main.css'))
+    .pipe(gulp.dest('./css/'));
 });
 
-//gulp concat
-gulp.task('concat', function() {
-    return gulp.src([
-        config.jsDirLibs + '/bower_components/jquery/dist/jquery.min.js',
-        config.jsDir + '/main.js'
-    ])
-    .pipe(concat('scripts.js'))
-    .pipe(gulp.dest(config.jsDir))
+gulp.task('minify-css', function() {
+  return gulp.src('css/main.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('css/'));
 });
 
-//gulp compress
-gulp.task('compress', ['concat'], function() {
-    return gulp.src(config.jsDir + '/scripts.js')
-    .pipe(uglify())
-    .on('error', console.error.bind(console))
-    .pipe(gulp.dest(config.jsDir + '/min'))
+gulp.task('concat-js', function() {
+    gulp.src([
+            'bower_components/jquery-1.11.1/dist/jquery.min.js',
+            'js/*.js'
+        ])
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('js'));
 });
 
-//gulp watch
-gulp.task('watch', function() {
-    watch(config.scssDir + '/**/*.scss', function(){
-        gulp.start('style');
-    });
+gulp.task('minify-js', function () {
+    gulp.src('js/app.js')
+        .pipe(jsmin())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('js'));
 });
+
+gulp.task('default', ['sass', 'minify-css', 'minify-js']);
