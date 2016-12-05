@@ -1,38 +1,27 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
-var jsmin = require('gulp-jsmin');
-var rename = require('gulp-rename');
+var minify = require('gulp-minify');
+var cleanCss = require('gulp-clean-css');
 
-gulp.task('sass', function () {
-  return gulp.src('./scss/app.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(rename('main.css'))
-    .pipe(gulp.dest('./css/'));
+gulp.task('sass', function() {
+  return gulp.src(['./scss/main.scss','./scss/buttons.scss'])
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
 });
 
-gulp.task('minify-css', function() {
-  return gulp.src('css/main.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('css/'));
+gulp.task('concat-css', function() {
+  return gulp.src(['./bower_components/bootstrap/dist/css/bootstrap.css','./css/main.css','./css/buttons.css'])
+    .pipe(concat('all.css'))
+    .pipe(cleanCss({keepSpecialComments:false}))
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('concat-js', function() {
-    gulp.src([
-            'bower_components/jquery-1.11.1/dist/jquery.min.js',
-            'js/*.js'
-        ])
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest('js'));
+  return gulp.src(['./bower_components/jquery/dist/jquery.min.js','./js/main.js'])
+    .pipe(concat('all.js'))
+    .pipe(minify())
+    .pipe(gulp.dest('./js'));
 });
 
-gulp.task('minify-js', function () {
-    gulp.src('js/app.js')
-        .pipe(jsmin())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('js'));
-});
-
-gulp.task('default', ['sass', 'minify-css', 'minify-js']);
+gulp.task('default', ['sass', 'concat-css', 'concat-js']);

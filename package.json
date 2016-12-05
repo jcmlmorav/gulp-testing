@@ -1,28 +1,32 @@
 {
-  "name": "gulp-testing",
+  "name": "ejercicio-sass",
   "version": "1.0.0",
-  "description": "Test",
+  "description": "Instalación basica de los paquetes de gulp",
   "main": "index.js",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
-  "devDependencies": {
-    "gulp-clean-css": "^2.0.13",
-    "gulp-concat": "^2.6.1",
-    "gulp-jsmin": "^0.1.5",
-    "gulp-sass": "^2.3.2"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jcmlmorav/gulp-testing.git"
+    "url": "git+https://github.com/blueminded/gulp-testing.git"
   },
-  "author": "jcmora",
-  "license": "ISC",
+  "keywords": [
+    "ejercicio"
+  ],
+  "author": "Carlos Vergara",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jcmlmorav/gulp-testing/issues"
+    "url": "https://github.com/blueminded/gulp-testing/issues"
   },
-  "homepage": "https://github.com/jcmlmorav/gulp-testing#readme"
+  "homepage": "https://github.com/blueminded/gulp-testing#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "0.0.14",
+    "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "minify": "^2.0.13"
+  }
 }

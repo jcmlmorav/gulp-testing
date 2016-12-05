@@ -1,17 +1,15 @@
 {
-  "name": "gulp-testing",
-  "homepage": "https://github.com/jcmlmorav/gulp-testing",
-  "authors": [
-    "Juan Camilo Mora <jcmora@smdigital.com.co>"
-  ],
-  "description": "Test",
+  "name": "Ejercicio Sass",
+  "description": "Instalación basica de Sass,Bower y algunos componentes",
   "main": "index.html",
   "keywords": [
-    "gulp",
-    "npm",
-    "bower"
+    "ejercicio"
   ],
-  "license": "MIT",
+  "authors": [
+    "Carlos Vergara"
+  ],
+  "license": "yes",
+  "homepage": "blueminded.co",
   "private": true,
   "ignore": [
     "**/.*",
@@ -21,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-1.11.1": "^3.1.1"
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
   }
 }
