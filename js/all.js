@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	$('.yellow').click(function(){
 		$('.yellow').css('color','yellow');
@@ -7,3 +8,4 @@ $(document).ready(function(){
 		$('.green').css('color','green');
 	});
 });
+document.getElementById("demo").innerHTML = (5 + 6) * 10;
