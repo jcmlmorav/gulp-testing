@@ -1,2 +1,2 @@
-node_modules/
-bower_components/
+bower/bower_components
+gulp-file/node_modules

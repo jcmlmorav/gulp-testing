@@ -1,3 +1,3 @@
-jQuery(document).on("ready", function() {
-    alert("Hola");
-});
+var sumar = function (a, b){
+  return a + b;
+};
