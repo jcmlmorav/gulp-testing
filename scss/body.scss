@@ -1,8 +1,15 @@
 $first-color: blue;
+$second-color: red;
 $text-color: gray;
 
 body{
-	background: $first-color: blue;
+	background: $first-color;
 	color: $text-color;
+
+	div{
+		background: $second-color;
+		height: 50px;
+		width: 100%;
+	}
 }
 
