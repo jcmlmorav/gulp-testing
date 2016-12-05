@@ -1,0 +1,30 @@
+/******************************************************************
+Site Name: Gulp and sass
+Author: Adrian Cano
+
+Stylesheet: Main Stylesheet
+******************************************************************/
+
+/*********************
+IMPORTING PARTIALS
+*********************/
+// Sass variables
+@import "partials/vars";
+
+// typography
+@import "partials/typography";
+
+// header
+@import "partials/header";
+
+// footer
+@import "partials/footer";
+
+/*********************
+BASE AND MOBILE SIZE
+*********************/
+// styles in base.scss
+@import "breakpoints/base";
+
+//styles in responsive.scss
+@import "breakpoints/responsive";
