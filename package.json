@@ -1,28 +1,23 @@
 {
   "name": "gulp-testing",
   "version": "1.0.0",
-  "description": "Test",
+  "description": "Testing mode on fire!",
   "main": "index.js",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
-  "devDependencies": {
-    "gulp-clean-css": "^2.0.13",
-    "gulp-concat": "^2.6.1",
-    "gulp-jsmin": "^0.1.5",
-    "gulp-sass": "^2.3.2"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jcmlmorav/gulp-testing.git"
+    "url": "git+https://github.com/joseAgudelo/gulp-testing.git"
   },
-  "author": "jcmora",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jcmlmorav/gulp-testing/issues"
+    "url": "https://github.com/joseAgudelo/gulp-testing/issues"
   },
-  "homepage": "https://github.com/jcmlmorav/gulp-testing#readme"
+  "homepage": "https://github.com/joseAgudelo/gulp-testing#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
 }

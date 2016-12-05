@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One|Shadows+Into+Light');
+
+body
+	font-family: 'Roboto Condensed'
+	background: #FFffff
+	height: 100%
+	overflow: hidden
+
+h1
+	font-size: 40px
+	text-align: center
+
+h1 span
+   font-family: 'Poiret One'
+   font-size: 30px
+
+.layer
+	display: flex
+	align-items: center
+	justify-content: center
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	transition: transform .4s
+	transform: perspective(800px) scale(1) translateX(0) rotateY(0)
+	transform-style: preserve-3d
+
+nav
+	vertical-align: center
+    
+nav ul
+	padding-left: 66.66%
+	font-size: larger
+	line-height: 2
+
+nav ul li
+	list-style-type: none
+
+nav ul li a
+	text-decoration: none
+	color: #ce4545
+
+.front
+	background: #ce4545
+	color: #eeeeee
+
+body:hover .front
+	transform: perspective(700px) scale(0.5) translateX(-16.66%) rotateY(25deg)
+

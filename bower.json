@@ -1,18 +1,12 @@
 {
   "name": "gulp-testing",
-  "homepage": "https://github.com/jcmlmorav/gulp-testing",
+  "description": "Testing mode on fire!",
+  "main": "index.js",
   "authors": [
-    "Juan Camilo Mora <jcmora@smdigital.com.co>"
+    "joseAgudelo <joseagu19@gmail.com>"
   ],
-  "description": "Test",
-  "main": "index.html",
-  "keywords": [
-    "gulp",
-    "npm",
-    "bower"
-  ],
-  "license": "MIT",
-  "private": true,
+  "license": "ISC",
+  "homepage": "https://github.com/joseAgudelo/gulp-testing",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -21,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-1.11.1": "^3.1.1"
+    "gsap": "greensock-js#^1.10.2",
+    "bootstrap": "^3.3.7"
   }
 }
