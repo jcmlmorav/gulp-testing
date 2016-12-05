@@ -3,12 +3,12 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 
 //Tarea para compilar sass
-gulp.task('sass', function() {
-    return gulp.src('scss/*.scss')
-        .pipe(sass({
-        	ouputStyle: 'compressed'
-        }))
-        .pipe(gulp.dest('css'));
+gulp.task('sass', function () {
+  return gulp.src('./scss/**/*.scss')
+    .pipe(sass({
+    	outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
 });
 
 //Tarea para unir los js
@@ -18,10 +18,9 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('js/'));
 });
 
-// Watch Files For Changes
-gulp.task('compilarsass', function() {
-    gulp.watch('scss/*.scss', ['sass']);
+gulp.task('sass:watch', function () {
+  gulp.watch('./scss/**/*.scss', ['sass']);
 });
 
 // Default Task
-gulp.task('default', ['compilarsass']);
+gulp.task('default', ['sass']);
